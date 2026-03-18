@@ -1,541 +1,493 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Nitin Madagi</title>
-    
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <meta name="author" content="Nitin Madagi">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" content="Nitin Madagi | Finance/Accountant Associate@Brain Injury Rights Group | MS in Finance (FRM Track) | Data Science Intern@Esurgi, Inc | Investment Banking Intern@J.P. Morgan Chase & Co | Senior Systems Engineer@Cognizant | Financial Modeling | Machine Learning | Risk Management | Python | SQL">
-    <meta name="keywords" content="Nitin Madagi, Finance Associate, Accountant, Financial Analyst, Machine Learning, Data Scientist, Risk Management, Financial Modeling, Investment Banking, Python, SQL, Tableau, Power BI, Budgeting, Forecasting, Yield Book, UB Graduate">
-
-    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
-    <link rel="icon" type="image/png" href="images/UB_logo.png">
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitin Madagi — Quant Risk &amp; Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06080d;--bg2:#0a0e17;--bg3:#0f1520;--bg4:#151d2b;
+  --surface:#1a2332;--surface2:#1e2a3a;
+  --text:#e8edf5;--text2:#8899b0;--text3:#556680;
+  --accent:#00e5a0;--accent2:#00c4ff;--accent3:#7c5cfc;
+  --red:#ff4757;--amber:#ffb347;--grid:rgba(0,229,160,.04);
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--sans);overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent);color:var(--bg)}
+.grid-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.grid-bg::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(0,229,160,.06),transparent 70%);
+}
+@keyframes scanline{0%{top:-4px}100%{top:100%}}
+.scanline{
+  position:fixed;top:0;left:0;right:0;height:4px;z-index:999;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(0,229,160,.03),transparent);
+  animation:scanline 8s linear infinite;
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1rem 2rem;
+  background:rgba(6,8,13,.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(0,229,160,.08);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-id{font-family:var(--mono);font-size:.85rem;font-weight:500;color:var(--accent);letter-spacing:.5px}
+.nav-id span{color:var(--text3)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{
+  font-family:var(--mono);font-size:.75rem;color:var(--text2);
+  text-decoration:none;letter-spacing:1px;text-transform:uppercase;
+  transition:color .3s;position:relative;
+}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after{width:100%}
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;padding:8rem 4rem 4rem;
+  position:relative;z-index:1;
+}
+.hero-tag{
+  font-family:var(--mono);font-size:.7rem;color:var(--accent);
+  letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;
+}
+.hero-tag::before{content:'';width:40px;height:1px;background:var(--accent)}
+.hero-name{
+  font-size:clamp(3rem,7vw,6rem);font-weight:700;
+  line-height:1;letter-spacing:-2px;margin-bottom:1rem;
+  background:linear-gradient(135deg,var(--text) 0%,var(--text2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-role{font-family:var(--mono);font-size:1rem;color:var(--text2);margin-bottom:3rem;max-width:600px;line-height:1.7}
+.hero-role .hl{color:var(--accent)}
+.hero-role .hl2{color:var(--accent2)}
+.hero-role .hl3{color:var(--accent3)}
+.terminal-prompt{font-family:var(--mono);font-size:.8rem;color:var(--text3);margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.terminal-prompt .cmd{color:var(--accent)}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+.cursor{display:inline-block;width:8px;height:16px;background:var(--accent);animation:blink 1s step-end infinite;vertical-align:middle;margin-left:2px}
+.stats-row{display:flex;gap:3rem;margin-top:2rem;border-top:1px solid rgba(0,229,160,.08);padding-top:2rem}
+.stat{display:flex;flex-direction:column;gap:.25rem}
+.stat-val{font-family:var(--mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.stat-label{font-family:var(--mono);font-size:.65rem;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase}
+section{position:relative;z-index:1;padding:6rem 4rem}
+.section-header{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.section-num{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:2px}
+.section-title{font-size:1.5rem;font-weight:600;letter-spacing:-0.5px}
+.section-line{flex:1;height:1px;background:rgba(0,229,160,.12)}
+.featured{background:var(--bg2);border:1px solid rgba(0,229,160,.08);border-radius:16px;overflow:hidden;position:relative}
+.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3))}
+.featured-badge{
+  position:absolute;top:1.5rem;right:1.5rem;
+  font-family:var(--mono);font-size:.6rem;color:var(--accent);letter-spacing:2px;text-transform:uppercase;
+  padding:.4rem 1rem;border:1px solid rgba(0,229,160,.2);border-radius:100px;background:rgba(0,229,160,.05);
+}
+.featured-content{padding:3rem}
+.featured-eyebrow{font-family:var(--mono);font-size:.7rem;color:var(--accent2);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem}
+.featured-title{font-size:2rem;font-weight:700;letter-spacing:-1px;margin-bottom:.75rem}
+.featured-sub{color:var(--text2);line-height:1.7;max-width:700px;margin-bottom:2rem;font-size:.95rem}
+.tech-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.tech-tag{font-family:var(--mono);font-size:.65rem;padding:.35rem .75rem;border-radius:6px;background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.1);color:var(--accent);letter-spacing:.5px}
+.tech-tag.blue{background:rgba(0,196,255,.06);border-color:rgba(0,196,255,.1);color:var(--accent2)}
+.tech-tag.purple{background:rgba(124,92,252,.06);border-color:rgba(124,92,252,.1);color:var(--accent3)}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,229,160,.06);border-radius:12px;overflow:hidden;margin-bottom:2rem}
+.metric-card{background:var(--bg3);padding:1.25rem;display:flex;flex-direction:column;gap:.25rem}
+.metric-card .val{font-family:var(--mono);font-size:1.25rem;font-weight:600;color:var(--text)}
+.metric-card .val .unit{font-size:.75rem;color:var(--text3);margin-left:2px}
+.metric-card .lbl{font-family:var(--mono);font-size:.6rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase}
+.featured-links{display:flex;gap:1rem;margin-top:1.5rem}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-size:.8rem;padding:.75rem 1.5rem;border-radius:8px;
+  background:var(--accent);color:var(--bg);text-decoration:none;font-weight:600;
+  border:none;cursor:pointer;transition:all .3s;letter-spacing:.5px;
+}
+.btn-primary:hover{box-shadow:0 0 30px rgba(0,229,160,.3);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-size:.8rem;padding:.75rem 1.5rem;border-radius:8px;
+  background:transparent;color:var(--text2);text-decoration:none;
+  border:1px solid rgba(136,153,176,.2);transition:all .3s;letter-spacing:.5px;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.chart-area{margin:2rem 0;padding:2rem;background:var(--bg);border:1px solid rgba(0,229,160,.06);border-radius:12px;position:relative;overflow:hidden}
+.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.chart-label{font-family:var(--mono);font-size:.7rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase}
+.chart-vals{display:flex;gap:1.5rem}
+.chart-val{font-family:var(--mono);font-size:.7rem}
+.chart-val.green{color:var(--accent)}
+.chart-val.red{color:var(--red)}
+.chart-val.blue{color:var(--accent2)}
+canvas#stressChart{width:100%;height:200px;display:block}
+.all-projects-wrap{display:flex;justify-content:center;margin-top:3rem}
+.btn-all-projects{
+  display:inline-flex;align-items:center;gap:.75rem;
+  font-family:var(--mono);font-size:.85rem;padding:1rem 2.5rem;border-radius:10px;
+  background:var(--bg2);color:var(--text2);text-decoration:none;
+  border:1px solid rgba(0,229,160,.12);transition:all .4s;letter-spacing:1px;
+  position:relative;overflow:hidden;cursor:pointer;
+}
+.btn-all-projects::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,160,.05),rgba(0,196,255,.05));opacity:0;transition:opacity .4s}
+.btn-all-projects:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,229,160,.1)}
+.btn-all-projects:hover::before{opacity:1}
+.btn-all-projects .arrow{transition:transform .3s;font-size:1.1rem}
+.btn-all-projects:hover .arrow{transform:translateX(4px)}
+.projects-panel{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.4,0,.2,1)}
+.projects-panel.open{max-height:3000px}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-top:2rem}
+.project-card{background:var(--bg2);border:1px solid rgba(0,229,160,.06);border-radius:12px;padding:1.5rem;transition:all .3s;position:relative}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+.project-card:hover{border-color:rgba(0,229,160,.15);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.project-card:hover::before{opacity:1}
+.project-card-title{font-size:1.05rem;font-weight:600;margin-bottom:.5rem;letter-spacing:-.3px}
+.project-card-desc{font-size:.85rem;color:var(--text2);line-height:1.6;margin-bottom:1rem}
+.project-card-footer{display:flex;justify-content:space-between;align-items:center}
+.project-card-links{display:flex;gap:.75rem}
+.project-card-links a{font-family:var(--mono);font-size:.65rem;color:var(--accent2);text-decoration:none;padding:.3rem .6rem;border-radius:4px;border:1px solid rgba(0,196,255,.15);transition:all .3s;letter-spacing:.5px}
+.project-card-links a:hover{background:rgba(0,196,255,.1);border-color:var(--accent2)}
+.contact-section{text-align:center;padding:8rem 4rem}
+.contact-section h2{font-size:2.5rem;font-weight:700;letter-spacing:-1px;margin-bottom:1rem}
+.contact-sub{color:var(--text2);font-size:1rem;margin-bottom:3rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.contact-grid{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.contact-card{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;background:var(--bg2);border:1px solid rgba(0,229,160,.06);border-radius:10px;text-decoration:none;color:var(--text);transition:all .3s;min-width:200px}
+.contact-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,229,160,.08)}
+.contact-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.contact-icon.email{background:rgba(0,229,160,.1);color:var(--accent)}
+.contact-icon.gh{background:rgba(0,196,255,.1);color:var(--accent2)}
+.contact-icon.li{background:rgba(124,92,252,.1);color:var(--accent3)}
+.contact-icon.loc{background:rgba(255,179,71,.1);color:var(--amber)}
+.contact-info{text-align:left}
+.contact-info .label{font-family:var(--mono);font-size:.6rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase}
+.contact-info .value{font-size:.85rem;margin-top:.15rem}
+footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;color:var(--text3);border-top:1px solid rgba(0,229,160,.05)}
+.noise{position:fixed;inset:0;z-index:998;pointer-events:none;opacity:.015;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.ticker-bar{position:relative;z-index:1;border-top:1px solid rgba(0,229,160,.06);border-bottom:1px solid rgba(0,229,160,.06);background:var(--bg2);padding:.6rem 0;overflow:hidden;white-space:nowrap}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-inner{display:inline-flex;gap:3rem;animation:tickerScroll 40s linear infinite}
+.ticker-item{font-family:var(--mono);font-size:.65rem;color:var(--text3);display:flex;align-items:center;gap:.5rem;letter-spacing:.5px}
+.ticker-item .dot{width:4px;height:4px;border-radius:50%}
+.ticker-item .dot.green{background:var(--accent)}
+.ticker-item .dot.blue{background:var(--accent2)}
+.ticker-item .dot.purple{background:var(--accent3)}
+.ticker-item .dot.amber{background:var(--amber)}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){
+  .hero{padding:7rem 1.5rem 3rem}
+  section{padding:4rem 1.5rem}
+  nav{padding:1rem 1.25rem}
+  .nav-links{gap:1rem}
+  .nav-links a{font-size:.65rem}
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{flex-wrap:wrap;gap:1.5rem}
+  .projects-grid{grid-template-columns:1fr}
+  .contact-grid{flex-direction:column;align-items:center}
+  .featured-title{font-size:1.4rem}
+  .contact-section h2{font-size:1.8rem}
+  .hero-name{letter-spacing:-1px}
+  .featured-content{padding:2rem 1.5rem}
+}
+</style>
 </head>
-<body class="bg_colour">
-    <table border=0 class="bg_colour" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr style="padding:0px">
-            <td style="padding:0px">
-                
-                <!-- Name tab -->
-                <table border=0 class="bg_colour" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-                    
-                    
-                    <tr style="padding:0px">
-                        <td style="padding:2.5%;width:40%;max-width:45%">
-                            <a href="images/Headshot.png"><img style="width:200px;max-width:200px;height:200px" alt="profile photo" src="images/Headshot.png" class="img-circle"></a>
-                        </td>
-                        <td style="padding:2.5%;width:90%;vertical-align:left">
-                            <p style="text-align:center">
-                                <h1 style="text-align:center"><name>Nitin Madagi</name></h1>
-                            </p>
-                            <p style="text-align:center">
-                            &nbsp|&nbsp
-                            <a href="#aboutme">About Me</a>
-                            &nbsp|&nbsp
-                            <a href="#experience">Experience</a>
-                            &nbsp|&nbsp
-                            <a href="#projects">Projects</a>
-                            &nbsp|&nbsp
-                            <a href="mailto:nitinsmadagi@gmail.com">Contact</a>
-                            &nbsp|&nbsp
-                            </p>
-                            <p style="text-align:center">
-                                Currently working as a Finance Associate at Brain Injury Rights Group.
-                            </p>
-                        </td>
-                        
-                        <td style="padding:2.5%;width:10%;max-width:10%">
-                            
-                        </td>
-                    </tr>
-                </tbody></table>
-            </td>
-        </tr>
-    </tbody></table>
+<body>
+<div class="noise"></div>
+<div class="scanline"></div>
+<div class="grid-bg"></div>
+
+<nav>
+  <div class="nav-id">NM<span>://</span>quant-risk</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="https://nmadagi.github.io/portfolio/data/Nitin_Madagi_Resume.pdf" target="_blank">Resume</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-tag">Quantitative Risk &amp; Analytics</div>
+  <h1 class="hero-name">Nitin Madagi</h1>
+  <p class="hero-role">
+    I build <span class="hl">risk models</span>,
+    <span class="hl2">stress testing frameworks</span>, and
+    <span class="hl3">financial analytics systems</span>
+    that turn complex market data into actionable risk intelligence.
+  </p>
+  <div class="terminal-prompt">
+    <span class="cmd">$</span>
+    <span id="typed-text"></span>
+    <span class="cursor"></span>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><span class="stat-val">7+</span><span class="stat-label">Projects Shipped</span></div>
+    <div class="stat"><span class="stat-val">MS</span><span class="stat-label">Finance &mdash; SUNY Buffalo</span></div>
+    <div class="stat"><span class="stat-val">Python</span><span class="stat-label">Primary Stack</span></div>
+    <div class="stat"><span class="stat-val">Risk</span><span class="stat-label">Domain Focus</span></div>
+  </div>
+</section>
+
+<div class="ticker-bar">
+  <div class="ticker-inner" id="ticker">
+    <span class="ticker-item"><span class="dot green"></span>Python</span>
+    <span class="ticker-item"><span class="dot blue"></span>Streamlit</span>
+    <span class="ticker-item"><span class="dot purple"></span>Pandas</span>
+    <span class="ticker-item"><span class="dot green"></span>NumPy</span>
+    <span class="ticker-item"><span class="dot amber"></span>Plotly</span>
+    <span class="ticker-item"><span class="dot blue"></span>Scikit-Learn</span>
+    <span class="ticker-item"><span class="dot purple"></span>XGBoost</span>
+    <span class="ticker-item"><span class="dot green"></span>Black-Scholes</span>
+    <span class="ticker-item"><span class="dot amber"></span>Monte Carlo</span>
+    <span class="ticker-item"><span class="dot blue"></span>VaR / ES</span>
+    <span class="ticker-item"><span class="dot purple"></span>Delta Hedging</span>
+    <span class="ticker-item"><span class="dot green"></span>SQL</span>
+    <span class="ticker-item"><span class="dot amber"></span>GBM Simulation</span>
+    <span class="ticker-item"><span class="dot blue"></span>Risk Analytics</span>
+    <span class="ticker-item"><span class="dot green"></span>CCAR / DFAST</span>
+    <span class="ticker-item"><span class="dot purple"></span>Liquidity Risk</span>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Featured Project</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="featured fade-up">
+    <span class="featured-badge">&#9733; Top Project</span>
+    <div class="featured-content">
+      <div class="featured-eyebrow">Stress Testing &amp; Scenario Analysis</div>
+      <h3 class="featured-title">CCAR Stress Testing Dashboard</h3>
+      <p class="featured-sub">
+        Interactive dashboard that simulates multi-quarter capital projections under Base, Moderate, and Severe stress scenarios. Features scenario-driven revenue shocks, capital evolution modeling, RWA analytics, and automated management reporting with PDF/PowerPoint exports.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag blue">Streamlit</span>
+        <span class="tech-tag purple">Plotly</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag blue">Financial Forecasting</span>
+        <span class="tech-tag purple">Risk Analytics</span>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card"><span class="val">3<span class="unit">scenarios</span></span><span class="lbl">Stress Regimes</span></div>
+        <div class="metric-card"><span class="val">Multi-Q<span class="unit">proj</span></span><span class="lbl">Forecast Horizon</span></div>
+        <div class="metric-card"><span class="val">RWA<span class="unit">+CET1</span></span><span class="lbl">Capital Metrics</span></div>
+        <div class="metric-card"><span class="val">Auto<span class="unit">gen</span></span><span class="lbl">PDF/PPTX Export</span></div>
+      </div>
+      <div class="chart-area">
+        <div class="chart-header">
+          <span class="chart-label">Capital Ratio Projection &mdash; Simulated</span>
+          <div class="chart-vals">
+            <span class="chart-val green">&#9650; Base</span>
+            <span class="chart-val blue">&#9650; Moderate</span>
+            <span class="chart-val red">&#9660; Severe</span>
+          </div>
+        </div>
+        <canvas id="stressChart"></canvas>
+      </div>
+      <div class="featured-links">
+        <a href="https://ccarstresstestingproject-n9hu3mvylltnekpvzpwk8t.streamlit.app/" target="_blank" class="btn-primary">
+          <span>Live Demo</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="https://github.com/nmadagi/CCAR_stress_testing_project" target="_blank" class="btn-ghost">
+          <span>Source Code</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="all-projects-wrap">
+    <button class="btn-all-projects" onclick="toggleProjects()" id="allProjectsBtn">
+      <span id="allProjectsText">See All Projects</span>
+      <span class="arrow">&#8594;</span>
+    </button>
+  </div>
+
+  <div class="projects-panel" id="projectsPanel">
+    <div class="projects-grid">
+      <div class="project-card fade-up">
+        <h4 class="project-card-title">AutoHedge &mdash; AI Trading Engine</h4>
+        <p class="project-card-desc">End-to-end AI trading system generating structured trade ideas using LLMs with JSON-based decision schemas, portfolio risk rules, and paper-trading execution via Alpaca API.</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag blue">Groq LLMs</span><span class="tech-tag purple">Alpaca API</span></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://ai-trade-engine-qwn63xtuq2ynnevmrzhha8.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/AI-Trade-Engine" target="_blank">Code</a></div></div>
+      </div>
+      <div class="project-card fade-up">
+        <h4 class="project-card-title">Intraday Liquidity Forecasting</h4>
+        <p class="project-card-desc">Interactive dashboard forecasting intraday cash-flow patterns and simulating liquidity stress scenarios with What-If simulator, breach detection, and IDL Playbook module.</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag blue">Streamlit</span><span class="tech-tag purple">Plotly</span></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://intraday-liquidity-manager-qkpitzyvrkwsapb3apewua.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/intraday-liquidity-manager" target="_blank">Code</a></div></div>
+      </div>
+      <div class="project-card fade-up">
+        <h4 class="project-card-title">Market-Linked Products Analytics</h4>
+        <p class="project-card-desc">Full analytics framework modeling market-linked insurance guarantees using GBM, Black-Scholes/Monte Carlo engines, delta-hedging backtests, and stress-testing modules.</p>
+        <div class="tech-tags"><span class="tech-tag">NumPy</span><span class="tech-tag blue">Black-Scholes</span><span class="tech-tag purple">Monte Carlo</span></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://market-linked-appucts-analytics-lab-g43qkeygh7r5vtlutxk59i.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/market-linked-products-analytics-lab" target="_blank">Code</a></div></div>
+      </div>
+      <div class="project-card fade-up">
+        <h4 class="project-card-title">FX Exposure Anomaly Detector</h4>
+        <p class="project-card-desc">ML-powered application detecting anomalies in foreign currency exposures from ERP data using Isolation Forest, enabling FX hedge audit and validation workflows.</p>
+        <div class="tech-tags"><span class="tech-tag">Scikit-learn</span><span class="tech-tag blue">Streamlit</span><span class="tech-tag purple">Pandas</span></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://nmadagi-fx-exposure-app-d14vee.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/FX_exposure" target="_blank">Code</a></div></div>
+      </div>
+      <div class="project-card fade-up">
+        <h4 class="project-card-title">Credit Risk Strategy &mdash; PD Modeling</h4>
+        <p class="project-card-desc">PD models using Logistic Regression and XGBoost with Expected Loss computation, risk-band segmentation, and real-time applicant scoring dashboard.</p>
+        <div class="tech-tags"><span class="tech-tag">XGBoost</span><span class="tech-tag blue">Streamlit</span><span class="tech-tag purple">Scikit-learn</span></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://credit-risk-strategy-nmadagi.streamlit.app" target="_blank">Demo</a><a href="https://github.com/nmadagi/credit_risk_strategy" target="_blank">Code</a></div></div>
+      </div>
+      <div class="project-card fade-up">
+        <h4 class="project-card-title">Real-Time Option Pricing</h4>
+        <p class="project-card-desc">Live option pricing application using Black-Scholes with Yahoo Finance API integration, annualized volatility computation, and interactive pricing interface.</p>
+        <div class="tech-tags"><span class="tech-tag">Black-Scholes</span><span class="tech-tag blue">Yahoo Finance</span><span class="tech-tag purple">SciPy</span></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://nmadagi-monte-carlo-index-pp8dom.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/monte-carlo" target="_blank">Code</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="section-header" style="justify-content:center">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Get In Touch</h2>
+  </div>
+  <p class="contact-sub">Open to opportunities in quantitative risk, financial engineering, and analytics. Let's connect.</p>
+  <div class="contact-grid">
+    <a href="mailto:nitinsmadagi@gmail.com" class="contact-card">
+      <div class="contact-icon email">&#9993;</div>
+      <div class="contact-info"><div class="label">Email</div><div class="value">nitinsmadagi@gmail.com</div></div>
+    </a>
+    <a href="https://github.com/nmadagi" target="_blank" class="contact-card">
+      <div class="contact-icon gh">GH</div>
+      <div class="contact-info"><div class="label">GitHub</div><div class="value">nmadagi</div></div>
+    </a>
+    <a href="https://www.linkedin.com/in/nitinmadagi/" target="_blank" class="contact-card">
+      <div class="contact-icon li">in</div>
+      <div class="contact-info"><div class="label">LinkedIn</div><div class="value">nitinmadagi</div></div>
+    </a>
+    <div class="contact-card">
+      <div class="contact-icon loc">&#9679;</div>
+      <div class="contact-info"><div class="label">Location</div><div class="value">New York, USA</div></div>
+    </div>
+  </div>
+</section>
+
+<footer><span>&copy; 2026 Nitin Madagi &mdash; Built with precision.</span></footer>
+
+<script>
+const phrases = [
+  'run stress_test --scenario=severe --quarters=8',
+  'python ccar_dashboard.py --export=pdf',
+  'compute VaR --confidence=99 --method=monte_carlo',
+  'backtest hedging_strategy --asset=fx_portfolio',
+  'fit pd_model --algo=xgboost --data=credit_risk',
+  'forecast liquidity --horizon=intraday --stress=true',
+];
+let phraseIdx = 0, charIdx = 0, deleting = false;
+const typedEl = document.getElementById('typed-text');
+function typeLoop() {
+  const phrase = phrases[phraseIdx];
+  if (!deleting) {
+    typedEl.textContent = phrase.slice(0, ++charIdx);
+    if (charIdx === phrase.length) { deleting = true; setTimeout(typeLoop, 2200); return; }
+    setTimeout(typeLoop, 45 + Math.random() * 30);
+  } else {
+    typedEl.textContent = phrase.slice(0, --charIdx);
+    if (charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; setTimeout(typeLoop, 400); return; }
+    setTimeout(typeLoop, 20);
+  }
+}
+typeLoop();
+
+const ticker = document.getElementById('ticker');
+ticker.innerHTML += ticker.innerHTML;
+
+function toggleProjects() {
+  const panel = document.getElementById('projectsPanel');
+  const btn = document.getElementById('allProjectsText');
+  const isOpen = panel.classList.toggle('open');
+  btn.textContent = isOpen ? 'Collapse Projects' : 'See All Projects';
+  if (isOpen) {
+    panel.querySelectorAll('.fade-up').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), 80 * i); });
+  }
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+function drawStressChart() {
+  const canvas = document.getElementById('stressChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 200 * dpr;
+  ctx.scale(dpr, dpr);
+  const W = rect.width, H = 200;
+  const quarters = ['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8'];
+  const base     = [13.2,13.5,13.8,14.1,14.3,14.6,14.8,15.0];
+  const moderate = [13.2,12.8,12.3,11.9,11.6,11.4,11.5,11.7];
+  const severe   = [13.2,11.8,10.5,9.4,8.6,8.1,7.9,8.0];
+  const pad = { l:45, r:15, t:15, b:30 };
+  const cw = W - pad.l - pad.r;
+  const ch = H - pad.t - pad.b;
+  const minY = 7, maxY = 16;
+  function x(i) { return pad.l + (i / (quarters.length - 1)) * cw; }
+  function y(v) { return pad.t + (1 - (v - minY) / (maxY - minY)) * ch; }
+  ctx.strokeStyle = 'rgba(0,229,160,.06)'; ctx.lineWidth = .5;
+  for (let v = 8; v <= 15; v += 1) {
+    ctx.beginPath(); ctx.moveTo(pad.l, y(v)); ctx.lineTo(W - pad.r, y(v)); ctx.stroke();
+    ctx.fillStyle = '#556680'; ctx.font = '10px JetBrains Mono';
+    ctx.textAlign = 'right'; ctx.fillText(v + '%', pad.l - 8, y(v) + 3);
+  }
+  ctx.textAlign = 'center';
+  quarters.forEach((q, i) => { ctx.fillStyle = '#556680'; ctx.fillText(q, x(i), H - 8); });
+  ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(255,71,87,.4)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pad.l, y(8.5)); ctx.lineTo(W - pad.r, y(8.5)); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#ff4757'; ctx.font = '9px JetBrains Mono';
+  ctx.textAlign = 'left'; ctx.fillText('Min CET1 = 8.5%', pad.l + 4, y(8.5) - 6);
+  function drawLine(data, color, width) {
+    ctx.strokeStyle = color; ctx.lineWidth = width;
+    ctx.beginPath();
+    data.forEach((v, i) => { i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
+    ctx.stroke();
+    ctx.strokeStyle = color.replace('1)', '.15)'); ctx.lineWidth = width + 4;
+    ctx.beginPath();
+    data.forEach((v, i) => { i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
+    ctx.stroke();
+    data.forEach((v, i) => { ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x(i), y(v), 2.5, 0, Math.PI * 2); ctx.fill(); });
+  }
+  drawLine(severe, 'rgba(255,71,87,1)', 2);
+  drawLine(moderate, 'rgba(0,196,255,1)', 2);
+  drawLine(base, 'rgba(0,229,160,1)', 2);
+}
+drawStressChart();
+window.addEventListener('resize', drawStressChart);
+</script>
 </body>
-</html>
-
-
-<!-- Projects -->
-
-<button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-projects" id="projects"><heading>Projects</heading></button>
-<div id="content-projects" class="collapse in">
-
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <a href="images/CCAR_StressTesting.png"><img src='images/CCAR_StressTesting.png' width="180"></a>
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>Stress Testing & Scenario Analysis Dashboard</big></papertitle>
-            <br>
-            <p><em>
-                Python, Streamlit, Plotly, Pandas, Financial Forecasting & Risk Analytics | Nov 2025 
-                <a href="https://github.com/nmadagi/CCAR_stress_testing_project/blob/main/ccar_app.py" target="_blank">[code]</a>
-                <a href="https://ccarstresstestingproject-n9hu3mvylltnekpvzpwk8t.streamlit.app/" target="_blank">[demo]</a>
-            </em></p>
-            <p>
-                <span>&#8226;</span>
-                Built an interactive  dashboard to simulate multi-quarter projections under Base, Moderate, and Severe stress scenarios using fully synthetic multi-year financial data.
-                <br>
-                <span>&#8226;</span>
-                Implemented scenario-driven revenue and expense shocks, capital evolution, RWA modeling, and Risk Appetite analytics including capital ratio thresholds, efficiency ratio limits, and breach detection.
-                <br>
-                <span>&#8226;</span>
-                Created automated management-style reporting with one-click PDF and PowerPoint exports summarizing scenario metrics, capital paths, and loss impacts.
-                <br>
-                <span>&#8226;</span>
-                Integrated controls for projection horizons, scenario shocks, and risk thresholds, enabling dynamic what-if analysis for planning, forecasting, and stress testing workflows.
-            </p>
-        </td>
-    </tr> 
-    <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <a href="images/AI-Trading System.png">
-                    <img src="images/AI-Trading System.png" width="180">
-                </a>
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>AutoHedge — AI-Driven Trading & Risk Engine</big></papertitle>
-            <br>
-            <p><em>
-                Python, Streamlit, Groq LLMs, Alpaca API, Pandas, NumPy | 2025
-                <a href="https://github.com/nmadagi/AI-Trade-Engine/blob/main/autohedge_app.py" target="_blank">[code]</a>
-                <a href="https://ai-trade-engine-qwn63xtuq2ynnevmrzhha8.streamlit.app/" target="_blank">[demo]</a>
-            </em></p>
-            <p>
-                <span>&#8226;</span>
-                Designed and built an end-to-end AI trading system that generates structured trade ideas (thesis, quantitative signals, risk assessment, and execution orders) using large language models.
-                <br>
-                <span>&#8226;</span>
-                Implemented a strict JSON-based decision schema enforced at inference time to ensure deterministic, machine-readable outputs suitable for automated risk controls.
-                <br>
-                <span>&#8226;</span>
-                Integrated custom portfolio risk rules including maximum position sizing, minimum notional thresholds, and capital allocation constraints prior to trade approval.
-                <br>
-                <span>&#8226;</span>
-                Developed a paper-trading execution layer using Alpaca’s trading API, enabling simulated order placement, position tracking, and account-level analytics.
-                <br>
-                <span>&#8226;</span>
-                Built a backtesting engine that converts AI-generated trade signals into historical P&L, equity curves, drawdown metrics, and win-rate statistics.
-                <br>
-                <span>&#8226;</span>
-                Delivered a production-style Streamlit dashboard with trade history, risk-adjusted orders, price visualization, and performance attribution for investment decision support.
-            </p>
-        </td>
-    </tr>
-    
-    <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <a href="images/IntradayProject.png"><img src='images/IntradayProject.png' width="180"> </a>
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>Intraday Liquidity Forecasting — What-If Stress Simulator</papertitle></big>
-            <br>
-            <p><em>
-                Python, Streamlit, Plotly, Pandas, Treasury Analytics | November 2025 
-                <a href="https://github.com/nmadagi/intraday-liquidity-manager/blob/main/Intraday-Liquidity-Forecasting.py" target="_blank">[code]</a>
-                <a href="https://intraday-liquidity-manager-qkpitzyvrkwsapb3apewua.streamlit.app/" target="_blank">[demo]</a>
-            </em></p>
-            <p>
-                <span>&#8226;</span>
-                Developed an interactive Streamlit dashboard to forecast intraday cash-flow patterns and simulate liquidity stress scenarios in real time.
-                <br>
-                <span>&#8226;</span>
-                Modeled net cash-flow behavior using a seasonal baseline and projected central-bank balances under configurable pass-through assumptions.
-                <br>
-                <span>&#8226;</span>
-                Built a <strong>What-If simulator</strong> to test inflow/outflow shocks, wire-payment pauses, and funding adjustments with automatic breach detection.
-                <br>
-                <span>&#8226;</span>
-                Designed an <strong>IDL Playbook</strong> module that visualizes escalation timelines, executes funding actions, and exports incident logs for resiliency documentation.
-            </p>
-        </td>
-        </tr>
-        <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <div class="one">
-                    <a href="images/Market_Linked.png"><img src='images/Market_Linked.png' width="180"> </a>
-                </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-                <papertitle><big>Market-Linked Products Analytics Lab</papertitle></big>
-                <br>
-                <p><em>
-                    Python, Streamlit, Plotly, NumPy, Pandas | 2025 
-                    <a href="https://github.com/nmadagi/market-linked-products-analytics-lab/blob/main/Market_Linked_Analytics.py" target="_blank">[code]</a>
-                    <a href="https://market-linked-appucts-analytics-lab-g43qkeygh7r5vtlutxk59i.streamlit.app/" target="_blank">[demo]</a>
-                </em></p>
-                <p>
-                    <span>&#8226;</span>
-                    Built a full analytics framework to model market-linked insurance guarantees using stochastic equity paths generated via Geometric Brownian Motion (GBM).
-                    <br>
-                    <span>&#8226;</span>
-                    Implemented Black–Scholes and Monte Carlo valuation engines to price option-like guarantee payoffs and compute Greeks (Delta, Gamma, Vega, Theta).
-                    <br>
-                    <span>&#8226;</span>
-                    Developed a delta-hedging backtest across thousands of simulated paths to evaluate hedge performance and calculate P&L distributions.
-                    <br>
-                    <span>&#8226;</span>
-                    Designed stress-testing modules to analyze liability PV and hedged loss behavior under equity, volatility, and rate shocks.
-                    <br>
-                    <span>&#8226;</span>
-                    Delivered a polished Streamlit dashboard with scenario visualization, VaR/ES risk metrics, and management-style summaries for decision support.
-                </p>
-            </td>
-        </tr>
-        
-        
-    <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <a href="images/FX Image.png"><img src='images/FX Image.png' width="180"> </a>
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>FX Exposure Anomaly Detector</papertitle></big>
-            <br>
-            <p><em>
-                Python, Scikit-learn, Streamlit, Pandas, Financial Risk Analytics | July 2025 <a href="https://github.com/nmadagi/FX_exposure/blob/main/app.py" target="_blank">[code]</a><a href="https://nmadagi-fx-exposure-app-d14vee.streamlit.app/" target="_blank">[demo]</a></em></p>
-            <p>
-                <span>&#8226;</span> 
-                Built a Streamlit application to detect anomalies in foreign currency exposures from ERP data (A/P, A/R, intercompany).
-                <br>
-                <span>&#8226;</span>
-                Trained an Isolation Forest model using engineered features like log-scaled USD amounts, currency type, and due date deltas.
-                <br>
-                <span>&#8226;</span>
-                Designed a user-friendly interface to upload ERP extracts, run anomaly detection, and download scored outputs.
-                <br>
-                <span>&#8226;</span>
-                Enabled finance teams to audit and validate FX exposures before executing hedge decisions.
-                <!-- <br>
-                <span>&#8226;</span>
-                Integrated retrieval and generative models, improving conversational accuracy by 35% while maintaining resource efficiency. -->
-            </p>
-        </td>
-    </tr>
-    <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <a href="images/Credit_Risk_Image.png"><img src='images/Credit_Risk_Image.png' width="180"></a>
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>Credit Risk Strategy — PD Modeling & Streamlit Dashboard</papertitle></big>
-            <br>
-            <p><em>
-                Python, Pandas, NumPy, Scikit-learn, XGBoost, Matplotlib, Seaborn, Streamlit | Oct. 2025  
-                <a href="https://github.com/nmadagi/credit_risk_strategy" target="_blank">[code]</a>  
-                <a href="https://credit-risk-strategy-nmadagi.streamlit.app" target="_blank">[app]</a></em></p>
-            <p>
-                <span>&#8226;</span> 
-                Built Probability of Default (PD) models using Logistic Regression (baseline) and XGBoost (champion) on the UCI German Credit dataset.
-                <br>
-                <span>&#8226;</span>
-                Computed Expected Loss (PD × LGD × EAD) and segmented loans into risk bands (AA/A/B/C) with approve/review/decline policy.
-                <br>
-                <span>&#8226;</span>
-                Developed an interactive Streamlit app for real-time applicant scoring, portfolio Expected Loss, and risk-band summaries.
-            </p>
-        </td>
-    </tr>   
-    <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <a href="images/Screenshot 2025-01-12 at 11.22.41 PM.png"><img src='images/Screenshot 2025-01-12 at 11.22.41 PM.png' width="180"> </a>
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>Real-Time Option Pricing Application</papertitle></big>
-            <br>
-            <p><em>
-                Streamlit, Python, NumPy, SciPy, Yahoo Finance API, Pandas, Black-Scholes Model, Financial Modeling, Data Analysis, Volatility Calculation, Interactive UI Design, Custom CSS | Oct. 2024 - Nov. 2024  <a href="https://github.com/nmadagi/monte-carlo" target="_blank">[code]</a><a href="https://nmadagi-monte-carlo-index-pp8dom.streamlit.app/" target="_blank">[demo]</a></em></p>
-            <p>
-                <span>&#8226;</span> 
-                Designed and deployed a real-time option pricing web application, utilizing the Black-Scholes Model to calculate call and put option prices, enabling dynamic user interaction and visualization.
-                <br>
-                <span>&#8226;</span>
-                Integrated live stock market data using Yahoo Finance API and implemented advanced statistical methods to compute annualized stock volatility, ensuring accurate option pricing.
-                <br>
-                <span>&#8226;</span>
-                Streamlined user experience through an interactive web interface, leveraging Streamlit with custom CSS styling for clear and professional result presentation.
-                <br>
-                <span>&#8226;</span>
-                Demonstrated expertise in financial mathematics and programming, applying Python libraries such as NumPy, SciPy, and Pandas to build a robust and scalable application for real-world option pricing.
-            </p>
-        </td>
-    </tr> 
-
-    <!-- <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/airflow.png' width="180">
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>Twitter Data ETL automation system </papertitle></big>
-            <br>
-            <p><em>AWS S3, AWS EC2, AWS-managed Apache Airflow, DAG, CSV, Data Validation frameworks | Sep. 2023 - Oct. 2023  </em></p>
-            <p>
-                <span>&#8226;</span> 
-                Established ETL frameworks on the AWS platform utilizing services such as S3 and EC2 to automate the creation of Twitter data CSV files.
-                <br>
-                <span>&#8226;</span>
-                Initiated data pipelines using AWS-managed Apache Airflow by creating DAGs, automating end-to-end ETL jobs for efficient data processing.
-                <br>
-                <span>&#8226;</span>
-                Acquired proficiency in data validation and quality check frameworks to handle real-time data, ensuring 100% data quality for consumption in the form of CSV files deployed on an S3 bucket.
-            </p>
-        </td>
-    </tr> 
-
-    <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-                <a href="images/ticket.png"><img src='images/ticket.png' width="180"> </a>
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:top">
-            <papertitle><big>Ticket Generating System</papertitle></big>
-            <br>
-            <p><em>Next.js, Tailwind CSS, MongoDB, Express.js | May. 2023 - Aug. 2023  <a href="https://github.com/hiteshpatil237/ticketing-app" target="_blank">[Code]</a></em></p>
-            <p>
-                <span>&#8226;</span> 
-                Constructed a Next.js system for allocating system tickets to resolve issues based on severity and priority, ensuring efficient issue management.
-                <br>
-                <span>&#8226;</span>
-                Devised an MVC architecture with a ticket schema stored in a NoSQL format in MongoDB using Atlas, providing a scalable and flexible data storage solution.
-                <br>
-                <span>&#8226;</span>
-                Implemented all CRUD operations with APIs written in an Express.js system, leveraging Next.js routing capabilities to manage the ticket lifecycle effectively.
-            </p>
-        </td>
-    </tr>  -->
-
-    
-</tbody></table>
-</div>
-
-</tbody></table>
-</div>
-<hr class="soft">
-
-
-<!-- About Me -->
-<!-- About section, quick links -->
-<button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-aboutme" id="aboutme"><heading>About Me</heading></button>
-<div id="content-aboutme" class="collapse in"></div>
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-        <td style="padding:2.5%;width:63%;vertical-align:middle">
-
-                                   <p><strong>Summary:</strong> I am a finance professional with a passion for integrating advanced analytics, risk management, and technology to address complex financial challenges. With hands-on experience in financial Risk Management, I am committed to driving impactful results and innovative solutions in the finance industry.</p>
-            <p>
-                I am always open to connecting and exploring opportunities in finance, technology, and risk management. Feel free to check out my 
-                <a href="data/Nitin_Madagi_Resume.pdf" target="_blank">Resume</a>
-                and drop me an 
-                <a href="mailto:nitinsmadagi@gmail.com" target="_blank">e-mail.</a>
-                I look forward to collaborating and contributing to meaningful projects.
-            </p>
-            <p><strong>Core Finance Skills:</strong> My expertise spans core financial areas such as Portfolio Risk Management, Risk Modeling, Risk Reporting & Presentation, Hedging Strategies, Liquidity Risk
-                Management, Financial Derivatives, Statistical Analysis, Credit Risk Assessment, Scenario Analysis & Stress Testing</p>
-
-            <p><strong>AI & Machine Learning:</strong> I have experience with AI & Machine Learning tools including TensorFlow, PyTorch, SciKit-Learn, Matplotlib, Neural Networks (LSTM, Transformers), Recurrent Neural
-                Networks (RNNs), Short Term Memory Networks (LSTM), Artificial Neural Networks (ANNs).</p>
-
-            <p><strong>Tools:</strong> My proficiency extends to tools such as Tableau, PeopleSoft Financial, Power BI, Essbase, Yield Book, MS Excel, PowerPoint, Alteryx, Hyperion, and QuickBooks.</p>
-
-            <p><strong>Programming Languages:</strong> Additionally, I am skilled in programming languages including Python, R, SQL, and MATLAB.</p>
-
-
-            <br>
-            <p style="text-align:center">
-                &nbsp~&nbsp
-                <a href="mailto:nitinsmadagi@gmail.com" target="_blank">Email</a> &nbsp|&nbsp
-                <a href="data/Nitin_Madagi_Resume.pdf" target="_blank" >Resume</a>
-                &nbsp|&nbsp
-                <a href="https://github.com/nmadagi" target="_blank" >Github</a> &nbsp|&nbsp
-                <a href="https://www.linkedin.com/in/nitinmadagi/" target="_blank">LinkedIn</a> 
-                &nbsp~&nbsp
-            </p>
-        </td>
-    </tr>
-</tbody></table>
-</div>
-<hr class="soft">
-
-                
-<!-- Education -->
-
-<button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-education" id="education"><heading>Education</heading></button>
-<div id="content-education" class="collapse in">
-
-<table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/UB_logo.png' width="120">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <big><h4>State University of New York at Buffalo</h4></big> 
-            <papertitle style="color:gray"><big>Master of Science</big> </papertitle> <papertitle><big> | Finance (Financial Risk Management Track)</big></papertitle>   
-            <br>
-            Aug '22 - Jan '24
-            <br>
-            Coursework: 
-            <br>
-            <span>&#8226;</span> Advanced Financial Modeling
-            <br>
-            <span>&#8226;</span> Risk Management
-            <br>
-            <span>&#8226;</span> Portfolio Theory and Asset Pricing
-            <br>
-            <span>&#8226;</span> Fixed Income Securities
-            <br>
-            <span>&#8226;</span> Derivatives and Options
-            <br>
-            <span>&#8226;</span> Data Analysis with Python and R
-            <br>
-            <span>&#8226;</span> Financial Econometrics
-            <br>
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/sri-siddhartha-institute-of-technology-ssit-logo.png' width="120">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <big><h4>Sri Siddhartha Institute of Technology, Tumkur</h4></big> 
-            <papertitle style="color:gray"><big>Bachelor of Engineering</big> </papertitle> <papertitle><big> | Electronics & Communications Engineering</big></papertitle>
-            <br>
-            June '12 - Sept '16
-            <br>
-            <br>
-        </td>
-    </tr>
-
-</tbody></table>
-</div>
-<hr class="soft">
-
-
-
-<!-- Experience -->
-
-<button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-experience" id="experience"><heading>Industry Experience</heading></button>
-<div id="content-experience" class="collapse in">
-
-<table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/LibertyLAW.png' width="130">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <papertitle style="color:gray"><big>Finance Associate</big> </papertitle> <papertitle><big> | Liberty & Freedom Legal Group <br> New York, USA</big></papertitle>
-            <br>
-            Feb '24 - Feb '25
-            <br>
-            <br>
-            When I joined Liberty & Freedom Legal Group, a donor-advised nonprofit, the organization was facing increasing volatility in its investment returns due to rising interest rates. Partnering closely with the CEO, I initiated a strategic overhaul identifying higher-margin service opportunities that ultimately led to a 30% increase in profitability. But what drew me in most was the challenge of protecting long-term fund value amid financial uncertainty.
-<br><br>
-I designed and implemented interest rate hedging strategies for our donor-advised funds, which helped stabilize returns and preserve our grantmaking capacity. Managing nearly $15M in funds independently, I was responsible for ensuring every process adhered to regulatory and operational standards. I also developed financial models to project performance and proactively detect risks.
-<br><br>
-To support portfolio oversight, I built automated Python tools to monitor exposure across $30M+ in donor assets, aligning reporting with both IRS guidelines and internal risk frameworks. This hands-on experience deepened my passion for managing financial risk in mission-driven environments.
-        </td>
-    </tr>
-    
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/Subhas Patil & Co..png' width="130">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <papertitle style="color:gray"><big>Financial Analyst</big> </papertitle> <papertitle><big> | Subhas Patil & Co. <br> Vijayapura, India</big></papertitle>
-            <br>
-            Apr '21 - Aug '22
-            <br>
-            <br>
-            My time at Subhas Patil & Co. marked the beginning of my focused journey into risk management. Tasked with daily oversight of client portfolios totaling over $20M in assets, I became immersed in the practical application of market, credit, and interest rate risk assessments.
-            <br><br>
-Driven by curiosity, I took it further developing Value-at-Risk (VaR) models and a custom stress testing framework that enhanced the firm’s risk scenario coverage by 40%. These tools became essential in weekly investment committee meetings, where I presented dashboards that helped shape tactical decisions.
-<br><br>
-What fascinated me most was how data anomalies in FX risk could distort exposure metrics. To resolve this, I designed a machine learning solution in Python that automated anomaly detection, cutting down manual review time by over 80%. It was during this role that I realized I was not just interested in reporting risk—I wanted to build the systems that manage and mitigate it.
-        </td>
-    </tr>
-    
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/cognizant.jpg' width="130">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <papertitle style="color:gray"><big>Senior Systems Engineer (Quant Risk Support Team)</big> </papertitle> <papertitle><big> | Cognizant Technology Solutions <br> Bangalore, India</big></papertitle>
-            <br>
-            Sep '18 - Jan '21
-            <br>
-            <br>
-            At Cognizant, I transitioned from engineering to financial risk through a technical lens. I worked directly with quant analysts to convert complex risk models into production-grade systems. A major focus was building robust ETL pipelines for ingesting market, trade, and counterparty data critical inputs for real-time risk analytics.
-            <br><br>
-One of the biggest challenges I solved was reducing the deployment time of new risk models. By implementing CI/CD pipelines, we brought it down from 3 weeks to just 3 days, enabling faster adaptation to changing market conditions. I also integrated our risk infrastructure with front-office and reporting platforms using APIs and Kafka, ensuring consistency and speed across the firm’s systems.
-<br><br>
-This was the first time I saw how crucial infrastructure is to effective risk management—and how engineering, when aligned with quantitative insight, could be a powerful tool in mitigating financial exposure.
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/cognizant.jpg' width="130">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <papertitle style="color:gray"><big>Systems Engineer (Quant Risk Support Team)</big> </papertitle> <papertitle><big> | Cognizant Technology Solutions <br> Bangalore, India</big></papertitle>
-            <br>
-            Sep '17 - Sep '18
-            <br>
-            <br>
-            Starting out in the Quant Risk Team, I was tasked with optimizing stress testing and scenario analysis workflows that had become bottlenecks during market events. I overhauled our data ingestion and compute routines, cutting runtime from 8 hours to less than 3. This directly impacted the speed at which our risk team could respond to market shifts.
-            <br><br>
-Recognizing the need for system stability, I built automated monitoring scripts to detect model execution failures in real-time, which reduced operational downtime and ensured timely reporting.
-<br><br>
-Though my role was technical, every problem I solved revealed another layer of risk dynamics in financial systems. These early challenges fueled my desire to pursue risk management not only as a technical domain but as a decision-making discipline at the intersection of finance and technology.
-        </td>
-    </tr>
-
-</tbody></table>
-</div>
-<hr class="soft">
-
-
-
-
-                
-
-</body>
-
 </html>
