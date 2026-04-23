@@ -318,42 +318,42 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;c
   <div class="featured fade-up">
     <span class="featured-badge">&#9733; Top Project</span>
     <div class="featured-content">
-      <div class="featured-eyebrow">Stress Testing &amp; Scenario Analysis</div>
-      <h3 class="featured-title">CCAR Stress Testing Dashboard</h3>
+      <div class="featured-eyebrow">Intraday Liquidity &amp; Treasury</div>
+      <h3 class="featured-title">Intraday Liquidity Management &mdash; IDL Dashboard</h3>
       <p class="featured-sub">
-        Interactive dashboard that simulates multi-quarter capital projections under Base, Moderate, and Severe stress scenarios. Features scenario-driven revenue shocks, capital evolution modeling, RWA analytics, and automated management reporting with PDF/PowerPoint exports.
+        Enterprise-grade IDL monitoring dashboard with BCBS&nbsp;248 regulatory compliance, ML-powered net flow forecasting using GradientBoosting, 6 pre-defined stress scenarios (counterparty delay, CCP margin spike, market stress), severity-classified playbook simulation, and channel-level analytics across Fedwire, CHIPS, ACH, Fed Securities, and CCP Margin.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">Python</span>
         <span class="tech-tag blue">Streamlit</span>
         <span class="tech-tag purple">Plotly</span>
-        <span class="tech-tag">Pandas</span>
-        <span class="tech-tag blue">Financial Forecasting</span>
-        <span class="tech-tag purple">Risk Analytics</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag blue">BCBS 248</span>
+        <span class="tech-tag purple">Treasury</span>
       </div>
       <div class="metrics-grid">
-        <div class="metric-card"><span class="val">3<span class="unit">scenarios</span></span><span class="lbl">Stress Regimes</span></div>
-        <div class="metric-card"><span class="val">Multi-Q<span class="unit">proj</span></span><span class="lbl">Forecast Horizon</span></div>
-        <div class="metric-card"><span class="val">RWA<span class="unit">+CET1</span></span><span class="lbl">Capital Metrics</span></div>
-        <div class="metric-card"><span class="val">Auto<span class="unit">gen</span></span><span class="lbl">PDF/PPTX Export</span></div>
+        <div class="metric-card"><span class="val">6<span class="unit">tabs</span></span><span class="lbl">Dashboard Views</span></div>
+        <div class="metric-card"><span class="val">BCBS<span class="unit">248</span></span><span class="lbl">Regulatory Standard</span></div>
+        <div class="metric-card"><span class="val">ML<span class="unit">forecast</span></span><span class="lbl">Net Flow Model</span></div>
+        <div class="metric-card"><span class="val">6<span class="unit">scenarios</span></span><span class="lbl">Stress Regimes</span></div>
       </div>
       <div class="chart-area">
         <div class="chart-header">
-          <span class="chart-label">Capital Ratio Projection &mdash; Simulated</span>
+          <span class="chart-label">Fed Reserve Balance &mdash; Intraday Simulation ($B)</span>
           <div class="chart-vals">
-            <span class="chart-val green">&#9650; Base</span>
-            <span class="chart-val blue">&#9650; Moderate</span>
-            <span class="chart-val red">&#9660; Severe</span>
+            <span class="chart-val green">&#9650; Peak $25B</span>
+            <span class="chart-val blue">&#8212; Avg $20B</span>
+            <span class="chart-val red">&#9660; Low $17B</span>
           </div>
         </div>
         <canvas id="stressChart"></canvas>
       </div>
       <div class="featured-links">
-        <a href="https://ccarstresstestingproject-n9hu3mvylltnekpvzpwk8t.streamlit.app/" target="_blank" class="btn-primary">
+        <a href="https://intraday-liquidity-management-uxjyycgubukykfz37wkg8v.streamlit.app" target="_blank" class="btn-primary">
           <span>Live Demo</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
-        <a href="https://github.com/nmadagi/CCAR_stress_testing_project" target="_blank" class="btn-ghost">
+        <a href="https://github.com/nmadagi/intraday-liquidity-management" target="_blank" class="btn-ghost">
           <span>Source Code</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
         </a>
@@ -377,10 +377,10 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;c
         <div class="project-card-footer"><div class="project-card-links"><a href="https://ai-trade-engine-qwn63xtuq2ynnevmrzhha8.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/AI-Trade-Engine" target="_blank">Code</a></div></div>
       </div>
       <div class="project-card fade-up">
-        <h4 class="project-card-title">Intraday Liquidity Forecasting</h4>
-        <p class="project-card-desc">Interactive dashboard forecasting intraday cash-flow patterns and simulating liquidity stress scenarios with What-If simulator, breach detection, and IDL Playbook module.</p>
+        <h4 class="project-card-title">CCAR Stress Testing Dashboard</h4>
+        <p class="project-card-desc">Interactive dashboard simulating multi-quarter capital projections under Base, Moderate, and Severe stress scenarios with RWA analytics and automated PDF/PowerPoint export.</p>
         <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag blue">Streamlit</span><span class="tech-tag purple">Plotly</span></div>
-        <div class="project-card-footer"><div class="project-card-links"><a href="https://intraday-liquidity-manager-qkpitzyvrkwsapb3apewua.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/intraday-liquidity-manager" target="_blank">Code</a></div></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://ccarstresstestingproject-n9hu3mvylltnekpvzpwk8t.streamlit.app/" target="_blank">Demo</a><a href="https://github.com/nmadagi/CCAR_stress_testing_project" target="_blank">Code</a></div></div>
       </div>
       <div class="project-card fade-up">
         <h4 class="project-card-title">Market-Linked Products Analytics</h4>
@@ -490,43 +490,47 @@ function drawStressChart() {
   canvas.height = 200 * dpr;
   ctx.scale(dpr, dpr);
   const W = rect.width, H = 200;
-  const quarters = ['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8'];
-  const base     = [13.2,13.5,13.8,14.1,14.3,14.6,14.8,15.0];
-  const moderate = [13.2,12.8,12.3,11.9,11.6,11.4,11.5,11.7];
-  const severe   = [13.2,11.8,10.5,9.4,8.6,8.1,7.9,8.0];
-  const pad = { l:45, r:15, t:15, b:30 };
+  const hours = ['9AM','10AM','11AM','12PM','1PM','2PM','3PM','4PM','5PM'];
+  const balance = [23, 20, 17, 19, 22, 25, 21, 18, 20];
+  const avgVal = 20;
+  const pad = { l:48, r:15, t:15, b:30 };
   const cw = W - pad.l - pad.r;
   const ch = H - pad.t - pad.b;
-  const minY = 7, maxY = 16;
-  function x(i) { return pad.l + (i / (quarters.length - 1)) * cw; }
+  const minY = 14, maxY = 27;
+  function x(i) { return pad.l + (i / (hours.length - 1)) * cw; }
   function y(v) { return pad.t + (1 - (v - minY) / (maxY - minY)) * ch; }
-  ctx.strokeStyle = 'rgba(0,229,160,.06)'; ctx.lineWidth = .5;
-  for (let v = 8; v <= 15; v += 1) {
+  ctx.strokeStyle = 'rgba(0,196,255,.06)'; ctx.lineWidth = .5;
+  for (let v = 15; v <= 26; v += 5) {
     ctx.beginPath(); ctx.moveTo(pad.l, y(v)); ctx.lineTo(W - pad.r, y(v)); ctx.stroke();
     ctx.fillStyle = '#556680'; ctx.font = '10px JetBrains Mono';
-    ctx.textAlign = 'right'; ctx.fillText(v + '%', pad.l - 8, y(v) + 3);
+    ctx.textAlign = 'right'; ctx.fillText('$' + v + 'B', pad.l - 6, y(v) + 3);
   }
   ctx.textAlign = 'center';
-  quarters.forEach((q, i) => { ctx.fillStyle = '#556680'; ctx.fillText(q, x(i), H - 8); });
-  ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(255,71,87,.4)'; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(pad.l, y(8.5)); ctx.lineTo(W - pad.r, y(8.5)); ctx.stroke();
+  hours.forEach((h, i) => { ctx.fillStyle = '#556680'; ctx.fillText(h, x(i), H - 8); });
+  const grad = ctx.createLinearGradient(0, pad.t, 0, H - pad.b);
+  grad.addColorStop(0, 'rgba(0,196,255,.25)');
+  grad.addColorStop(1, 'rgba(0,196,255,.02)');
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  ctx.moveTo(x(0), H - pad.b);
+  balance.forEach((v, i) => { i === 0 ? ctx.lineTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
+  ctx.lineTo(x(balance.length - 1), H - pad.b);
+  ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = 'rgba(0,196,255,1)'; ctx.lineWidth = 2;
   ctx.setLineDash([]);
-  ctx.fillStyle = '#ff4757'; ctx.font = '9px JetBrains Mono';
-  ctx.textAlign = 'left'; ctx.fillText('Min CET1 = 8.5%', pad.l + 4, y(8.5) - 6);
-  function drawLine(data, color, width) {
-    ctx.strokeStyle = color; ctx.lineWidth = width;
-    ctx.beginPath();
-    data.forEach((v, i) => { i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
-    ctx.stroke();
-    ctx.strokeStyle = color.replace('1)', '.15)'); ctx.lineWidth = width + 4;
-    ctx.beginPath();
-    data.forEach((v, i) => { i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
-    ctx.stroke();
-    data.forEach((v, i) => { ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x(i), y(v), 2.5, 0, Math.PI * 2); ctx.fill(); });
-  }
-  drawLine(severe, 'rgba(255,71,87,1)', 2);
-  drawLine(moderate, 'rgba(0,196,255,1)', 2);
-  drawLine(base, 'rgba(0,229,160,1)', 2);
+  ctx.beginPath();
+  balance.forEach((v, i) => { i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
+  ctx.stroke();
+  ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(255,179,71,.7)'; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(pad.l, y(avgVal)); ctx.lineTo(W - pad.r, y(avgVal)); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = 'rgba(255,179,71,.9)'; ctx.font = '9px JetBrains Mono';
+  ctx.textAlign = 'left'; ctx.fillText('Avg $20B', pad.l + 4, y(avgVal) - 5);
+  const peakIdx = balance.indexOf(Math.max(...balance));
+  ctx.fillStyle = 'rgba(0,229,160,1)';
+  ctx.beginPath(); ctx.arc(x(peakIdx), y(balance[peakIdx]), 4, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = 'rgba(0,229,160,.3)'; ctx.lineWidth = 6;
+  ctx.beginPath(); ctx.arc(x(peakIdx), y(balance[peakIdx]), 4, 0, Math.PI * 2); ctx.stroke();
 }
 drawStressChart();
 window.addEventListener('resize', drawStressChart);
