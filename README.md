@@ -52,3 +52,7 @@ open index.html
 **Nitin Madagi** — Finance professional & quant developer based in Jersey City, NJ
 
 [🔗 GitHub](https://github.com/nmadagi) | [🌐 Portfolio](https://nmadagi.github.io/portfolio)
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
