@@ -318,42 +318,42 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;c
   <div class="featured fade-up">
     <span class="featured-badge">&#9733; Top Project</span>
     <div class="featured-content">
-      <div class="featured-eyebrow">Intraday Liquidity &amp; Treasury</div>
-      <h3 class="featured-title">Intraday Liquidity Management &mdash; IDL Dashboard</h3>
+      <div class="featured-eyebrow">Market Risk Data Quality</div>
+      <h3 class="featured-title">Market Risk Data Lab: Data Quality Under the Risk Models</h3>
       <p class="featured-sub">
-        Enterprise-grade IDL monitoring dashboard with BCBS&nbsp;248 regulatory compliance, ML-powered net flow forecasting using GradientBoosting, 6 pre-defined stress scenarios (counterparty delay, CCP margin spike, market stress), severity-classified playbook simulation, and channel-level analytics across Fedwire, CHIPS, ACH, Fed Securities, and CCP Margin.
+        Six synthetic risk factor series with four injected data faults (stale feed, spike, gap, vendor splice). Statistical detection with peer and reversal tiebreakers, a repair ladder scored proposal by proposal against KS and VaR-impact guardrails, and a mask-and-recover harness that benchmarks a random forest against linear methods on tail preservation. The finding: 99% VaR barely moves on corrupted data (+0.1%) while expected shortfall moves +56%, so the headline risk number is not a data alarm. Historical simulation VaR, stressed VaR window search, sensitivities, coherent stress scenarios, backtesting, and an LLM morning report held behind a number-check guardrail.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">Python</span>
         <span class="tech-tag blue">Streamlit</span>
-        <span class="tech-tag purple">Plotly</span>
-        <span class="tech-tag">Scikit-learn</span>
-        <span class="tech-tag blue">BCBS 248</span>
-        <span class="tech-tag purple">Treasury</span>
+        <span class="tech-tag purple">Scikit-learn</span>
+        <span class="tech-tag">VaR / sVaR / ES</span>
+        <span class="tech-tag blue">Anomaly Detection</span>
+        <span class="tech-tag purple">Data Remediation</span>
       </div>
       <div class="metrics-grid">
-        <div class="metric-card"><span class="val">6<span class="unit">tabs</span></span><span class="lbl">Dashboard Views</span></div>
-        <div class="metric-card"><span class="val">BCBS<span class="unit">248</span></span><span class="lbl">Regulatory Standard</span></div>
-        <div class="metric-card"><span class="val">ML<span class="unit">forecast</span></span><span class="lbl">Net Flow Model</span></div>
-        <div class="metric-card"><span class="val">6<span class="unit">scenarios</span></span><span class="lbl">Stress Regimes</span></div>
+        <div class="metric-card"><span class="val">6<span class="unit">series</span></span><span class="lbl">Risk Factor Time Series</span></div>
+        <div class="metric-card"><span class="val">4<span class="unit">faults</span></span><span class="lbl">Injected and Triaged</span></div>
+        <div class="metric-card"><span class="val">+56%<span class="unit">ES</span></span><span class="lbl">Moved by Bad Data</span></div>
+        <div class="metric-card"><span class="val">+0.1%<span class="unit">VaR</span></span><span class="lbl">Same Data, Same Book</span></div>
       </div>
       <div class="chart-area">
         <div class="chart-header">
-          <span class="chart-label">Fed Reserve Balance &mdash; Intraday Simulation ($B)</span>
+          <span class="chart-label">5Y Swap Rate, Clean vs Corrupted Feed (%)</span>
           <div class="chart-vals">
-            <span class="chart-val green">&#9650; Peak $25B</span>
-            <span class="chart-val blue">&#8212; Avg $20B</span>
-            <span class="chart-val red">&#9660; Low $17B</span>
+            <span class="chart-val blue">&#8212; Clean</span>
+            <span class="chart-val red">&#8212; Corrupted</span>
+            <span class="chart-val green">Stale 15d &#183; Spike 8&sigma;</span>
           </div>
         </div>
         <canvas id="stressChart"></canvas>
       </div>
       <div class="featured-links">
-        <a href="https://intraday-liquidity-management-uxjyycgubukykfz37wkg8v.streamlit.app" target="_blank" class="btn-primary">
+        <a href="https://market-risk-data-lab.streamlit.app" target="_blank" class="btn-primary">
           <span>Live Demo</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
-        <a href="https://github.com/nmadagi/intraday-liquidity-management" target="_blank" class="btn-ghost">
+        <a href="https://github.com/nmadagi/market-risk-data-lab" target="_blank" class="btn-ghost">
           <span>Source Code</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
         </a>
@@ -370,6 +370,12 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;c
 
   <div class="projects-panel" id="projectsPanel">
     <div class="projects-grid">
+      <div class="project-card fade-up">
+        <h4 class="project-card-title">Intraday Liquidity Management: IDL Dashboard</h4>
+        <p class="project-card-desc">IDL monitoring dashboard with BCBS 248 alignment, ML net flow forecasting with GradientBoosting, six stress scenarios (counterparty delay, CCP margin spike, market stress), severity-classified playbook simulation, and channel analytics across Fedwire, CHIPS, ACH, Fed Securities, and CCP margin.</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag blue">Scikit-learn</span><span class="tech-tag purple">BCBS 248</span></div>
+        <div class="project-card-footer"><div class="project-card-links"><a href="https://intraday-liquidity-management-uxjyycgubukykfz37wkg8v.streamlit.app" target="_blank">Demo</a><a href="https://github.com/nmadagi/intraday-liquidity-management" target="_blank">Code</a></div></div>
+      </div>
       <div class="project-card fade-up">
         <h4 class="project-card-title">Liquidity Stress Lab &mdash; Deposit Runoff &amp; LCR</h4>
         <p class="project-card-desc">Liquidity stress testing sandbox modeling behavioral deposit runoff across insured/uninsured segments, scenario-driven cash-flow projection with survival horizon, and LCR/NSFR reconciliation on a validated DuckDB data layer with LLM-drafted committee narratives.</p>
@@ -496,47 +502,54 @@ function drawStressChart() {
   canvas.height = 200 * dpr;
   ctx.scale(dpr, dpr);
   const W = rect.width, H = 200;
-  const hours = ['9AM','10AM','11AM','12PM','1PM','2PM','3PM','4PM','5PM'];
-  const balance = [23, 20, 17, 19, 22, 25, 21, 18, 20];
-  const avgVal = 20;
-  const pad = { l:48, r:15, t:15, b:30 };
+  // 5y swap rate, May to Aug 2026, from the project's own data files.
+  // The corrupted feed freezes for 15 days in June and prints one 8 sigma
+  // spike on Jul 15; everywhere else the two series are identical.
+  const clean = [3.7034, 3.6453, 3.5516, 3.5094, 3.4536, 3.4877, 3.5226, 3.4746, 3.4621, 3.3619, 3.3371, 3.3615, 3.4092, 3.3721, 3.4323, 3.351, 3.2848, 3.3265, 3.4209, 3.4501, 3.4499, 3.3312, 3.2224, 3.2324, 3.2156, 3.1577, 3.1645, 3.174, 3.229, 3.2394, 3.3098, 3.3128, 3.309, 3.3701, 3.3186, 3.476, 3.4985, 3.5212, 3.5518, 3.6567, 3.7014, 3.6142, 3.6927, 3.675, 3.682, 3.6127, 3.643, 3.6084, 3.6152, 3.601, 3.7082, 3.8182, 3.8213, 3.8253, 3.8053, 3.8667, 3.849, 3.8262, 3.8805, 3.8512, 3.8495, 3.7629, 3.8024, 3.9097, 3.9496, 4.03, 3.9831, 3.996, 3.9439, 3.9314, 3.974, 3.9795, 3.9017, 3.8295, 3.754, 3.7819, 3.896, 3.9712, 3.8668, 3.9453, 3.9968, 3.9117, 3.8951, 3.9556, 3.9859, 3.9137, 3.9475];
+  const corrupted = [3.7034, 3.6453, 3.5516, 3.5094, 3.4536, 3.4877, 3.5226, 3.4746, 3.4621, 3.3619, 3.3371, 3.3615, 3.4092, 3.3721, 3.4323, 3.351, 3.2848, 3.3265, 3.4209, 3.4501, 3.4499, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.3312, 3.4985, 3.5212, 3.5518, 3.6567, 3.7014, 3.6142, 3.6927, 3.675, 3.682, 3.6127, 3.643, 3.6084, 3.6152, 3.601, 3.7082, 3.8182, 3.8213, 4.4732, 3.8053, 3.8667, 3.849, 3.8262, 3.8805, 3.8512, 3.8495, 3.7629, 3.8024, 3.9097, 3.9496, 4.03, 3.9831, 3.996, 3.9439, 3.9314, 3.974, 3.9795, 3.9017, 3.8295, 3.754, 3.7819, 3.896, 3.9712, 3.8668, 3.9453, 3.9968, 3.9117, 3.8951, 3.9556, 3.9859, 3.9137, 3.9475];
+  const labels = ["May 01", "May 04", "May 05", "May 06", "May 07", "May 08", "May 11", "May 12", "May 13", "May 14", "May 15", "May 18", "May 19", "May 20", "May 21", "May 22", "May 25", "May 26", "May 27", "May 28", "May 29", "Jun 01", "Jun 02", "Jun 03", "Jun 04", "Jun 05", "Jun 08", "Jun 09", "Jun 10", "Jun 11", "Jun 12", "Jun 15", "Jun 16", "Jun 17", "Jun 18", "Jun 19", "Jun 22", "Jun 23", "Jun 24", "Jun 25", "Jun 26", "Jun 29", "Jun 30", "Jul 01", "Jul 02", "Jul 03", "Jul 06", "Jul 07", "Jul 08", "Jul 09", "Jul 10", "Jul 13", "Jul 14", "Jul 15", "Jul 16", "Jul 17", "Jul 20", "Jul 21", "Jul 22", "Jul 23", "Jul 24", "Jul 27", "Jul 28", "Jul 29", "Jul 30", "Jul 31", "Aug 03", "Aug 04", "Aug 05", "Aug 06", "Aug 07", "Aug 10", "Aug 11", "Aug 12", "Aug 13", "Aug 14", "Aug 17", "Aug 18", "Aug 19", "Aug 20", "Aug 21", "Aug 24", "Aug 25", "Aug 26", "Aug 27", "Aug 28", "Aug 31"];
+  const ticks = [0, 21, 43, 66];
+  const pad = { l:44, r:15, t:15, b:30 };
   const cw = W - pad.l - pad.r;
   const ch = H - pad.t - pad.b;
-  const minY = 14, maxY = 27;
-  function x(i) { return pad.l + (i / (hours.length - 1)) * cw; }
+  const all = clean.concat(corrupted);
+  const minY = Math.floor(Math.min(...all) * 4) / 4 - 0.25;
+  const maxY = Math.ceil(Math.max(...all) * 4) / 4 + 0.25;
+  function x(i) { return pad.l + (i / (clean.length - 1)) * cw; }
   function y(v) { return pad.t + (1 - (v - minY) / (maxY - minY)) * ch; }
   ctx.strokeStyle = 'rgba(0,196,255,.06)'; ctx.lineWidth = .5;
-  for (let v = 15; v <= 26; v += 5) {
+  ctx.fillStyle = '#556680'; ctx.font = '10px JetBrains Mono';
+  for (let v = minY; v <= maxY + 1e-9; v += 0.5) {
     ctx.beginPath(); ctx.moveTo(pad.l, y(v)); ctx.lineTo(W - pad.r, y(v)); ctx.stroke();
-    ctx.fillStyle = '#556680'; ctx.font = '10px JetBrains Mono';
-    ctx.textAlign = 'right'; ctx.fillText('$' + v + 'B', pad.l - 6, y(v) + 3);
+    ctx.textAlign = 'right'; ctx.fillText(v.toFixed(1) + '%', pad.l - 6, y(v) + 3);
   }
   ctx.textAlign = 'center';
-  hours.forEach((h, i) => { ctx.fillStyle = '#556680'; ctx.fillText(h, x(i), H - 8); });
+  ticks.forEach(i => { ctx.fillStyle = '#556680'; ctx.fillText(labels[i].slice(0,3), x(i), H - 8); });
   const grad = ctx.createLinearGradient(0, pad.t, 0, H - pad.b);
-  grad.addColorStop(0, 'rgba(0,196,255,.25)');
+  grad.addColorStop(0, 'rgba(0,196,255,.18)');
   grad.addColorStop(1, 'rgba(0,196,255,.02)');
   ctx.fillStyle = grad;
-  ctx.beginPath();
-  ctx.moveTo(x(0), H - pad.b);
-  balance.forEach((v, i) => { i === 0 ? ctx.lineTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
-  ctx.lineTo(x(balance.length - 1), H - pad.b);
-  ctx.closePath(); ctx.fill();
-  ctx.strokeStyle = 'rgba(0,196,255,1)'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x(0), H - pad.b);
+  clean.forEach((v, i) => ctx.lineTo(x(i), y(v)));
+  ctx.lineTo(x(clean.length - 1), H - pad.b); ctx.closePath(); ctx.fill();
   ctx.setLineDash([]);
+  ctx.strokeStyle = 'rgba(0,196,255,1)'; ctx.lineWidth = 3.5; ctx.lineJoin = 'round';
   ctx.beginPath();
-  balance.forEach((v, i) => { i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); });
+  clean.forEach((v, i) => i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)));
   ctx.stroke();
-  ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(255,179,71,.7)'; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.moveTo(pad.l, y(avgVal)); ctx.lineTo(W - pad.r, y(avgVal)); ctx.stroke();
-  ctx.setLineDash([]);
-  ctx.fillStyle = 'rgba(255,179,71,.9)'; ctx.font = '9px JetBrains Mono';
-  ctx.textAlign = 'left'; ctx.fillText('Avg $20B', pad.l + 4, y(avgVal) - 5);
-  const peakIdx = balance.indexOf(Math.max(...balance));
+  ctx.strokeStyle = 'rgba(255,92,92,1)'; ctx.lineWidth = 1.4;
+  ctx.beginPath();
+  corrupted.forEach((v, i) => i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)));
+  ctx.stroke();
+  const spike = corrupted.indexOf(Math.max(...corrupted));
   ctx.fillStyle = 'rgba(0,229,160,1)';
-  ctx.beginPath(); ctx.arc(x(peakIdx), y(balance[peakIdx]), 4, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(x(spike), y(corrupted[spike]), 4, 0, Math.PI * 2); ctx.fill();
   ctx.strokeStyle = 'rgba(0,229,160,.3)'; ctx.lineWidth = 6;
-  ctx.beginPath(); ctx.arc(x(peakIdx), y(balance[peakIdx]), 4, 0, Math.PI * 2); ctx.stroke();
+  ctx.beginPath(); ctx.arc(x(spike), y(corrupted[spike]), 4, 0, Math.PI * 2); ctx.stroke();
+  ctx.fillStyle = 'rgba(0,229,160,.9)'; ctx.font = '9px JetBrains Mono'; ctx.textAlign = 'right';
+  ctx.fillText('spike', x(spike) - 8, y(corrupted[spike]) + 3);
+  let stale = 0; for (let i = 1; i < corrupted.length; i++) { if (corrupted[i] === corrupted[i-1] && corrupted[i] !== clean[i]) { stale = i; break; } }
+  if (stale) { ctx.textAlign = 'left'; ctx.fillText('stale feed', x(stale) + 6, y(corrupted[stale]) - 8); }
 }
 drawStressChart();
 window.addEventListener('resize', drawStressChart);
