@@ -321,19 +321,19 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;c
       <div class="featured-eyebrow">Market Risk Data Quality</div>
       <h3 class="featured-title">Market Risk Data Lab: Data Quality Under the Risk Models</h3>
       <p class="featured-sub">
-        Six synthetic risk factor series with four injected data faults (stale feed, spike, gap, vendor splice). Statistical detection with peer and reversal tiebreakers, a repair ladder scored proposal by proposal against KS and VaR-impact guardrails, and a mask-and-recover harness that benchmarks a random forest against linear methods on tail preservation. The finding: 99% VaR barely moves on corrupted data (+0.1%) while expected shortfall moves +56%, so the headline risk number is not a data alarm. Historical simulation VaR, stressed VaR window search, sensitivities, coherent stress scenarios, backtesting, and an LLM morning report held behind a number-check guardrail.
+        Six synthetic risk factor series with three injected data faults (frozen feed, bad print, gap). A gradient boosting detector trained on synthetic faults finds and names all three in a fraction of a second, a repair ladder is scored proposal by proposal against KS and VaR-impact guardrails, and a mask-and-recover harness benchmarks a random forest against linear methods on tail preservation. The finding: 99% VaR barely moves on corrupted data (+0.1%) while expected shortfall moves +56%, so the headline risk number is not a data alarm. Historical simulation VaR, stressed VaR window search, sensitivities, coherent stress scenarios, backtesting, and an LLM morning report held behind a number-check guardrail.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">Python</span>
         <span class="tech-tag blue">Streamlit</span>
-        <span class="tech-tag purple">Scikit-learn</span>
+        <span class="tech-tag purple">Gradient Boosting</span>
         <span class="tech-tag">VaR / sVaR / ES</span>
         <span class="tech-tag blue">Anomaly Detection</span>
         <span class="tech-tag purple">Data Remediation</span>
       </div>
       <div class="metrics-grid">
         <div class="metric-card"><span class="val">6<span class="unit">series</span></span><span class="lbl">Risk Factor Time Series</span></div>
-        <div class="metric-card"><span class="val">4<span class="unit">faults</span></span><span class="lbl">Injected and Triaged</span></div>
+        <div class="metric-card"><span class="val">3<span class="unit">faults</span></span><span class="lbl">Planted, Found, Named</span></div>
         <div class="metric-card"><span class="val">+56%<span class="unit">ES</span></span><span class="lbl">Moved by Bad Data</span></div>
         <div class="metric-card"><span class="val">+0.1%<span class="unit">VaR</span></span><span class="lbl">Same Data, Same Book</span></div>
       </div>
@@ -409,7 +409,7 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;c
       <div class="project-card fade-up">
         <h4 class="project-card-title">Credit Risk Strategy &mdash; PD Modeling</h4>
         <p class="project-card-desc">PD models using Logistic Regression and XGBoost with Expected Loss computation, risk-band segmentation, and real-time applicant scoring dashboard.</p>
-        <div class="tech-tags"><span class="tech-tag">XGBoost</span><span class="tech-tag blue">Streamlit</span><span class="tech-tag purple">Scikit-learn</span></div>
+        <div class="tech-tags"><span class="tech-tag">XGBoost</span><span class="tech-tag blue">Streamlit</span><span class="tech-tag purple">Gradient Boosting</span></div>
         <div class="project-card-footer"><div class="project-card-links"><a href="https://credit-risk-strategy-nmadagi.streamlit.app" target="_blank">Demo</a><a href="https://github.com/nmadagi/credit_risk_strategy" target="_blank">Code</a></div></div>
       </div>
       <div class="project-card fade-up">
